@@ -1,10 +1,11 @@
-const Options = ({ good, neutral, bad, total }) => {
+const Options = ({ good, neutral, bad, total, positive }) => {
   return (
     <div>
       <p>Good: {good}</p>
       <p>Neutral: {neutral}</p>
       <p>Bad: {bad}</p>
-      <p>Positive: {Math.round((good / total) * 100)}</p>
+      <p>Total: {total}</p>
+      <p>Positive: {positive}</p>
     </div>
   );
 };

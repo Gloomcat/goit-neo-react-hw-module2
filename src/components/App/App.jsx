@@ -26,6 +26,7 @@ const App = () => {
   }, [feedback]);
 
   const totalFeedback = feedback.good + feedback.neutral + feedback.bad;
+  const positiveFeedback = Math.round((feedback.good / totalFeedback) * 100);
 
   const updateFeedback = feedbackType => {
     if (feedbackType == 'reset') {
@@ -46,12 +47,13 @@ const App = () => {
     <div className={css.container}>
       <Description />
       <Feedback updater={updateFeedback} total={totalFeedback} />
-      {totalFeedback ? (
+      {totalFeedback > 0 ? (
         <Options
           good={feedback.good}
           neutral={feedback.neutral}
           bad={feedback.bad}
           total={totalFeedback}
+          positive={positiveFeedback}
         />
       ) : (
         <Notification />
