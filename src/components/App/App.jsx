@@ -46,9 +46,9 @@ const App = () => {
   return (
     <div className={css.container}>
       <Description />
-      <Feedback updater={updateFeedback} total={totalFeedback} />
+      <Options updater={updateFeedback} total={totalFeedback} />
       {totalFeedback > 0 ? (
-        <Options
+        <Feedback
           good={feedback.good}
           neutral={feedback.neutral}
           bad={feedback.bad}

@@ -1,12 +1,11 @@
-import css from './Feedback.module.css';
-
-const Feedback = ({ updater, total }) => {
+const Feedback = ({ good, neutral, bad, total, positive }) => {
   return (
-    <div className={css.feedback}>
-      <button onClick={() => updater('good')}>Good</button>
-      <button onClick={() => updater('neutral')}>Neutral</button>
-      <button onClick={() => updater('bad')}>Bad</button>
-      {total > 0 && <button onClick={() => updater('reset')}>Reset</button>}
+    <div>
+      <p>Good: {good}</p>
+      <p>Neutral: {neutral}</p>
+      <p>Bad: {bad}</p>
+      <p>Total: {total}</p>
+      <p>Positive: {positive}</p>
     </div>
   );
 };
